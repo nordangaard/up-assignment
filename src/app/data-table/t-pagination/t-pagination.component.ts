@@ -106,4 +106,8 @@ export class TPaginationComponent {
       )
     );
   }
+
+  ngOnDestroy() {
+    this.subscribers.forEach((sub) => sub.unsubscribe());
+  }
 }

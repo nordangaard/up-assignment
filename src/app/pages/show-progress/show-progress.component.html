@@ -6,4 +6,9 @@
   (change)="onChangeProgress($event)"
 />
 
-<app-progress-circle [radius]="radius" [progress]="progress" [color]="color" />
+<app-progress-circle
+  [radius]="radius"
+  [progress]="progress"
+  [color]="color"
+  (complete)="onComplete()"
+/>

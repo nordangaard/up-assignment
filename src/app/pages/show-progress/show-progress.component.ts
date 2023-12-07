@@ -18,4 +18,8 @@ export class ShowProgressComponent {
     const value = ($event.target as HTMLInputElement).value;
     this.progress = +value;
   }
+
+  onComplete() {
+    console.log('Complete!');
+  }
 }
