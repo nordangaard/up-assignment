@@ -1,0 +1,16 @@
+<header>
+  <h2>Users</h2>
+</header>
+<app-t-grid
+  [data]="users$"
+  [pageSize]="pageSize"
+  (sortChange)="onSortChange($event)"
+  (paginationChange)="onPaginationChange($event)"
+>
+  <app-t-column
+    *ngFor="let templateCol of columns$ | async"
+    [name]="templateCol.name"
+    [property]="templateCol.property"
+    [sortable]="templateCol.sortable"
+  />
+</app-t-grid>

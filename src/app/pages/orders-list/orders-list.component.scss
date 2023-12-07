@@ -1,0 +1,60 @@
+:host {
+  display: block;
+}
+
+header {
+  position: relative;
+
+  button {
+    // remove all button styling
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+  img {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    cursor: pointer;
+  }
+}
+
+.settings {
+  padding: var(--base-size-md);
+  margin: var(--base-size-md) 0;
+  background-color: var(--lightest-gray-color);
+
+  h3,
+  h4 {
+    margin: var(--base-size-xs) 0;
+  }
+
+  &-section {
+    display: inline-block;
+    background-color: white;
+    padding: var(--base-size-md);
+
+    &-columns {
+      display: flex;
+      flex-wrap: wrap;
+      width: 400px;
+
+      .column-setting {
+        width: 200px;
+        display: flex;
+        padding: var(--base-size-xxs);
+
+        :hover {
+          cursor: pointer;
+        }
+
+        label {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}

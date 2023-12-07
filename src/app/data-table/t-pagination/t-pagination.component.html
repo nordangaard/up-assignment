@@ -1,0 +1,75 @@
+<nav class="pagination" role="navigation">
+  <ul>
+    <li>
+      <a
+        [attr.tabindex]="(this.hasPrevPage$ | async) ? 0 : -1"
+        [attr.disabled]="!(this.hasPrevPage$ | async)"
+        class="pagination-link"
+        data-representative-link="true"
+        href="#"
+        (click)="prevPage()"
+        >Previous</a
+      >
+    </li>
+    <li *ngIf="this.hasMorePrevPages$ | async">
+      <a
+        [attr.aria-label]="'Go to page 1'"
+        class="pagination-link"
+        data-representative-link="true"
+        href="#"
+        (click)="setPage(1)"
+        >1</a
+      >
+    </li>
+    <li *ngIf="this.hasMorePrevPages$ | async">
+      <a class="pagination-link dot-link">...</a>
+    </li>
+    <li *ngFor="let page of prevPages$ | async">
+      <a
+        [attr.aria-label]="'Go to page ' + page"
+        class="pagination-link"
+        data-representative-link="true"
+        href="#"
+        (click)="setPage(page)"
+        >{{ page }}</a
+      >
+    </li>
+    <li>
+      <a
+        [attr.aria-label]="'Current page, page ' + (this.currentPage$ | async)"
+        aria-current="true"
+        class="pagination-link current-page-link"
+        >{{ this.currentPage$ | async }}</a
+      >
+    </li>
+    <li *ngFor="let page of nextPages$ | async">
+      <a
+        class="pagination-link"
+        data-representative-link="true"
+        href="#"
+        (click)="setPage(page)"
+        >{{ page }}</a
+      >
+    </li>
+    <li *ngIf="this.hasMoreNextPages$ | async">
+      <a class="pagination-link dot-link">...</a>
+    </li>
+    <li>
+      <a
+        [attr.disabled]="!(this.hasNextPage$ | async)"
+        data-representative-link="true"
+        class="pagination-link"
+        href="#"
+        (click)="nextPage()"
+        >Next</a
+      >
+    </li>
+    <li>
+      <span
+        [attr.aria-label]="'Total number of pages: ' + (this.numPages$ | async)"
+        class="pagination-total"
+        >Total: {{ this.numPages$ | async }}</span
+      >
+    </li>
+  </ul>
+</nav>

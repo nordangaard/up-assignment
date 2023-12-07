@@ -1,0 +1,71 @@
+body {
+  --base-font-size: 1rem;
+
+  --base-size-xxxs: 0.5rem; // 10px
+  --base-size-xxs: 0.625rem; // 10px
+  --base-size-xs: 0.75rem; // 12px
+  --base-size-sm: 0.875rem; // 14px
+  --base-size-md: 1rem; // 16px
+  --base-size-lg: 1.125rem; // 18px
+  --base-size-xl: 1.25rem; // 20px
+  --base-size-xxl: 1.5rem; // 24px
+  --base-size-xxxl: 2rem; // 32px
+  --base-size-huge: 3rem; // 48px
+
+  --font-size-xxs: var(--base-size-xxs);
+  --font-size-xs: var(--base-size-xs);
+  --font-size-sm: var(--base-size-sm);
+  --font-size-md: var(--base-size-md);
+  --font-size-lg: var(--base-size-lg);
+  --font-size-xl: var(--base-size-xl);
+  --font-size-xxl: var(--base-size-xxl);
+  --font-size-xxxl: var(--base-size-xxxl);
+  --font-size-huge: var(--base-size-huge);
+
+  --font-size-heading1: 2.5rem; // 40px
+  --font-size-heading2: 2rem; // 32px
+  --font-size-heading3: 1.75rem; // 28px
+}
+
+.heading-1,
+h1 {
+  font-size: var(--font-size-heading1);
+}
+
+.heading-2,
+h2 {
+  font-size: var(--font-size-heading2);
+}
+
+.heading-3,
+h3 {
+  font-size: var(--font-size-heading3);
+}
+
+.body-text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.body-text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.body-text-md {
+  font-size: var(--font-size-md);
+}
+
+.body-text-lg {
+  font-size: var(--font-size-lg);
+}
+
+.body-text-xl {
+  font-size: var(--font-size-xl);
+}
+
+.body-text-xxl {
+  font-size: var(--font-size-xxl);
+}
+
+.body-text-xxxl {
+  font-size: var(--font-size-xxxl);
+}

@@ -1,0 +1,9 @@
+<input
+  type="range"
+  min="0"
+  max="100"
+  [value]="progress"
+  (change)="onChangeProgress($event)"
+/>
+
+<app-progress-circle [radius]="radius" [progress]="progress" [color]="color" />

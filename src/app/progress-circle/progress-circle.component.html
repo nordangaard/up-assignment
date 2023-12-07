@@ -1,0 +1,16 @@
+<div
+  class="progress-circle"
+  [style.--radius]="radius + 'px'"
+  [style.--progress]="progress"
+  [style.--color]="color"
+  [style.--secondary-color]="secondaryColor"
+>
+  <label class="progress-circle-label" for="progress">{{ progress }}%</label>
+  <progress
+    class="visually-hidden"
+    id="progress"
+    min="0"
+    max="100"
+    [value]="progress"
+  ></progress>
+</div>

@@ -1,0 +1,35 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <th
+        [attr.aria-label]="
+          heading.column.sortable ? 'Sort by ' + heading.column.name : ''
+        "
+        [attr.role]="heading.column.sortable ? 'button' : ''"
+        [attr.tabindex]="heading.column.sortable ? '0' : ''"
+        *ngFor="let heading of sortableColumns$ | async"
+        [class.sortable]="heading.column.sortable"
+        [class.asc]="heading.direction === 'asc'"
+        [class.desc]="heading.direction === 'desc'"
+        (click)="setSort(heading)"
+        (keypress)="setSort(heading)"
+      >
+        {{ heading.column.name }}
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of items$ | async">
+        <td *ngFor="let col of columns$ | async">
+          {{ formatData(row[col.property]) }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <app-t-pagination
+    (pageChange)="onPageChange($event)"
+    [numPages]="numPages$ | async"
+  />
+</footer>

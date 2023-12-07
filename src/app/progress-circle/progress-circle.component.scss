@@ -1,0 +1,21 @@
+.progress-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: var(--radius);
+
+  width: var(--radius, 20px);
+  height: var(--radius, 20px);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(
+      var(--color) calc(var(--progress) * 1%),
+      var(--secondary-color) 0
+    );
+
+  &-label {
+    color: var(--comp-color);
+    font-size: 0.2em;
+  }
+}

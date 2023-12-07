@@ -1,0 +1,51 @@
+<header>
+  <h2>Orders</h2>
+  <img
+    role="button"
+    aria-label="Order settings menu"
+    tabindex="0"
+    (click)="onToggleSettings()"
+    (keypress)="onToggleSettings()"
+    height="32px"
+    width="32px"
+    src="assets/icons/settings.svg"
+    alt="Order page settings"
+  />
+</header>
+<section *ngIf="settingsOpen" class="settings">
+  <h3 class="body-text-xl">Settings</h3>
+
+  <section class="settings-section">
+    <header>
+      <h4>Displayed columns</h4>
+    </header>
+    <section class="settings-section-columns">
+      <span class="column-setting" *ngFor="let templateCol of columns$ | async">
+        <label [attr.for]="'set:' + templateCol.name">{{
+          templateCol.name
+        }}</label>
+        <input
+          [attr.id]="'set:' + templateCol.name"
+          type="checkbox"
+          [checked]="templateCol.displayed"
+          [value]="templateCol.name"
+          (change)="setDisplayColumn(templateCol, $event)"
+        />
+      </span>
+    </section>
+  </section>
+</section>
+<app-t-grid
+  [data]="orders$"
+  [pageSize]="pageSize"
+  [sortable]="sortable"
+  (sortChange)="onSortChange($event)"
+  (paginationChange)="onPaginationChange($event)"
+>
+  <app-t-column
+    *ngFor="let templateCol of displayedColumns$ | async"
+    [name]="templateCol.name"
+    [property]="templateCol.property"
+    [sortable]="templateCol.sortable"
+  />
+</app-t-grid>
