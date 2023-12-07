@@ -20,6 +20,6 @@ export class ShowProgressComponent {
   }
 
   onComplete() {
-    console.log('Complete!');
+    // console.log('Complete!');
   }
 }

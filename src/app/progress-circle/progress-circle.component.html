@@ -1,7 +1,7 @@
 <div
   class="progress-circle"
-  [style.--radius]="radius + 'px'"
-  [style.--progress]="progress"
+  [style.--radius]="(radius$ | async) + 'px'"
+  [style.--progress]="progress$ | async"
   [style.--color]="color"
   [style.--secondary-color]="secondaryColor"
 >
@@ -11,6 +11,6 @@
     id="progress"
     min="0"
     max="100"
-    [value]="progress"
+    [value]="progress$ | async"
   ></progress>
 </div>

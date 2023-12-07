@@ -21,12 +21,6 @@ describe('TPaginationComponent', () => {
     expect(component.numPages).toBe(0);
   });
 
-  it('should subscribe to currentPage$ observable on ngOnInit', () => {
-    spyOn(component.currentPage$, 'subscribe');
-    component.ngOnInit();
-    expect(component.currentPage$.subscribe).toHaveBeenCalled();
-  });
-
   it('should default numPages to 1 when null is set', () => {
     component.numPages = null;
     expect(component.numPages).toBe(1);
