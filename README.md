@@ -2,6 +2,8 @@
 
 ## Pages
 
+Pages and controls should be tab-keyboard accessible.
+
 ### Orders List
 
 **Showcasing**
